@@ -1,7 +1,7 @@
 {
   "title": "LifxIoT",
   "description": "Library for controlling Lifx bulbs via their API on Windows IoT machines",
-  "version": "1.0.1-*",
+  "version": "1.0.2-*",
 
   "dependencies": {
     "NETStandard.Library": "1.6.1",
