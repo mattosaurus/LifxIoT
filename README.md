@@ -1,5 +1,5 @@
 # LifxIoT
-.NET wrapper to control Lifx bulbs via their cloud API. This code is based on that created by Daniel Porry <a href="https://github.com/porrey/iot/tree/master/source/IoT%20Devices%20and%20Sensors/Porrey.Uwp.IoT.Devices.Lifx" alt="Porrey.Uwp.IoT.Devices.Lifx">here</a> with the only change here being that all await methods now have their continueOnCapturedContext property set to false so as to prevent the code hanging when deployed to a Raspberry Pi 3 running Windows IoT.
+.NET wrapper to control Lifx bulbs via their cloud API. This code is based on that created by Daniel Porry <a href="https://github.com/porrey/iot/tree/master/source/IoT%20Devices%20and%20Sensors/Porrey.Uwp.IoT.Devices.Lifx" alt="Porrey.Uwp.IoT.Devices.Lifx">here</a> with changes made to the await methods now having their continueOnCapturedContext property set to false so as to prevent the code hanging when deployed to a Raspberry Pi 3 running Windows IoT and a SelectorSearch type class added.
 
 # Installation
 To use LifxIoT in your C# project, you can either download the LifxIoT C# .NET libraries directly from the Github repository or, if you have the NuGet package manager installed, you can grab them automatically.
@@ -36,4 +36,25 @@ The below code in MainPage.xaml.cs lists all bulbs linked to the account.
 
             IEnumerable<Light> lights = api.ListLights(selectors).Result;
         }
+```
+
+And this is how to use the new SelectorSearch class to return only bulbs in the bedroom group.
+
+```C#
+		public MainPage()
+		{
+			this.InitializeComponent();
+
+			LifxApi api = new LifxApi("YOUR_TOKEN_HERE");
+
+			SelectorList selectors = new SelectorList();
+			SelectorSearch selector = new SelectorSearch();
+
+			selector.SearchType = "group";
+			selector.SearchValue = "Bedroom";
+
+			selectors.Add(selector);
+
+			IEnumerable<Light> lights = api.ListLights(selectors).Result;
+		}
 ```
