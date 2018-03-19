@@ -16,6 +16,7 @@
     <PackageTags>Lifx</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>1.1.0 - Update to .csproj, Target netstandard</PackageReleaseNotes>
+    <Authors>mattosaurus</Authors>
   </PropertyGroup>
 
   <ItemGroup>
