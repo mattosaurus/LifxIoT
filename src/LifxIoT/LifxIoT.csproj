@@ -10,6 +10,12 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <Version>1.1.0</Version>
+    <RepositoryUrl>https://github.com/mattosaurus/LifxIoT</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>Lifx</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>1.1.0 - Update to .csproj, Target netstandard</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
